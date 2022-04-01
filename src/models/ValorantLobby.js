@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
 const LobbySchema = new mongoose.Schema({
-    team1: [mongoose.SchemaType.ObjectId],
-    team2: [mongoose.SchemaType.ObjectId],
-    game: { Type: String, required: true },
+    team1: String,
+    team2: String,
+    time: mongoose.Schema.Types.Date,
 });
 
-module.exports = mongoose.model("Lobby", LobbySchema);
+module.exports = mongoose.model("ValorantLobby", LobbySchema);

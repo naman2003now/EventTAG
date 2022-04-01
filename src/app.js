@@ -4,6 +4,7 @@ const bodyparser = require("body-parser");
 const path = require("path");
 const CSGOPlayer = require("./models/CSGOPlayer");
 const CSGOTeam = require("./models/CSGOTeam");
+const ValorantLobby = require("./models/ValorantLobby");
 const ValorantPlayer = require("./models/ValorantPlayer");
 const ValorantTeam = require("./models/ValorantTeam");
 const app = express();
@@ -106,6 +107,36 @@ app.post("/teamInfo", (req, res) => {
     });
 });
 
+app.post("/scheduleUploadValorant", (req, res) => {
+    let scheduleObject = {
+        time: req.body.time,
+    };
+
+    ValorantTeam.findOne({ name: req.body.team1Name }).then((team1) => {
+        if (team1) {
+            ValorantTeam.findOne({ name: req.body.team2Name }).then((team2) => {
+                if (team2) {
+                    scheduleObject.team1 = team1.name;
+                    scheduleObject.team2 = team2.name;
+                    ValorantLobby.create(scheduleObject)
+                        .then(() => {
+                            res.send("Schedule created");
+                        })
+                        .catch((error) => res.send(error.message));
+                } else {
+                    res.send("There is not team with that team 2name");
+                }
+            });
+        } else {
+            res.send(req.body);
+        }
+    });
+});
+
+app.get("/schedule", (req, res) => {
+    ValorantLobby.find().then((matches) => res.render("schedule", { matches }));
+});
+
 app.get("/teamInfo", (req, res) => {
     res.render("TeamInfo");
 });
@@ -120,6 +151,10 @@ app.get("/ValorantCreateTeam", (req, res) => {
 
 app.get("/", (req, res) => {
     res.render("index");
+});
+
+app.get("/scheduleUploadValorant", (req, res) => {
+    res.render("scheduleUploadValorant");
 });
 
 app.listen(process.env.PORT || 6969, () => {
