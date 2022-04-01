@@ -7,8 +7,10 @@ const CSGOTeam = require("./models/CSGOTeam");
 const ValorantPlayer = require("./models/ValorantPlayer");
 const ValorantTeam = require("./models/ValorantTeam");
 const app = express();
+const cors = require("cors");
 
 app.use(bodyparser());
+app.use(cors());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../public"));
 app.use("/css", express.static(path.join(__dirname, "../public/css")));
