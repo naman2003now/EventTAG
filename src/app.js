@@ -124,11 +124,11 @@ app.post("/scheduleUploadValorant", (req, res) => {
                         })
                         .catch((error) => res.send(error.message));
                 } else {
-                    res.send("There is not team with that team 2name");
+                    res.send("There is no team with the name of team 2");
                 }
             });
         } else {
-            res.send(req.body);
+            res.send("These is no team with the name of team 1");
         }
     });
 });
