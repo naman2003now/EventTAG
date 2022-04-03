@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Create Team</title>
+        <title>Form</title>
         <link rel="stylesheet" href="css/form.css" />
     </head>
     <body>
-        <form action="/CSGOCreateTeam" method="post" id="form">
-            <div class="formField">
-                <input
-                    id="teamName"
-                    name="teamName"
-                    type="text"
-                    placeholder="Team Name"
-                />
-            </div>
-            <h1>Leader Information</h1>
+        <form action="/ValorantSolo" method="post" id="form">
             <div class="formField">
                 <input
                     id="fullName"
                     name="fullName"
                     type="text"
                     placeholder="Full Name"
+                    required
                 />
             </div>
             <div class="formField">
@@ -29,6 +21,7 @@
                     name="RegistrationNumber"
                     type="text"
                     placeholder="Registration Number"
+                    required
                 />
             </div>
             <div class="formField">
@@ -37,6 +30,7 @@
                     name="VitMail"
                     type="text"
                     placeholder="Vit Mail"
+                    required
                 />
             </div>
             <div class="formField">
@@ -47,7 +41,8 @@
                     id="gameId"
                     name="gameId"
                     type="text"
-                    placeholder="Steam ID"
+                    placeholder="Riot ID"
+                    required
                 />
             </div>
             <div class="formField">
@@ -56,6 +51,7 @@
                     name="discord"
                     type="text"
                     placeholder="Discord ID"
+                    required
                 />
             </div>
             <div class="formField">
@@ -64,9 +60,9 @@
                     name="phoneNumber"
                     type="number"
                     placeholder="Phonenumber"
+                    required
                 />
             </div>
-
             <button name="submit" type="submit" form="form">Submit</button>
         </form>
     </body>

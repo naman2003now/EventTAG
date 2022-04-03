@@ -9,7 +9,7 @@ body {
     overflow: hidden;
 }
 
-#formContainer {
+#ButtonContainer {
     display: flex;
     flex-direction: row;
 
@@ -27,16 +27,17 @@ body {
     flex-direction: column;
 }
 
-#valorantFormContainer {
+#valorantButtonContainer {
     justify-self: flex-end;
     display: none;
+    opacity: 0;
     justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
     width: 50%;
 }
 
-#csgoFormContainer {
+#csgoButtonContainer {
     display: none;
     opacity: 0;
     justify-content: flex-end;
@@ -59,17 +60,14 @@ body {
     width: 50%;
     border: 0;
     background: linear-gradient(118.65deg, #e79723 0%, #efbf2f 100%);
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 4px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 5px;
+    box-shadow: 0 0 10px #efbf2f;
     transition-duration: 0.2s;
 }
 
 .joinButton:hover {
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25),
-        inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 2px 2px 20px #efbf2f;
 }
-
 #introText {
     position: absoute;
     width: 50%;

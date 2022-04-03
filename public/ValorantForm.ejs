@@ -2,45 +2,85 @@
 <html lang="en">
     <head>
         <title>Form</title>
-        <link rel="stylesheet" href="css/form.css" />
+        <link rel="stylesheet" href="css/Csgoform.css" />
     </head>
     <body>
         <form action="/createPlayerValorant" method="post" id="form">
             <div class="formField">
-                <label for="fullName">Full Name: </label>
-                <input id="fullName" name="fullName" type="text" />
+                <input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="regno">Registration Number: </label>
-                <input id="regno" name="RegistrationNumber" type="text" />
+                <input
+                    id="regno"
+                    name="RegistrationNumber"
+                    type="text"
+                    placeholder="Registration Number"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="mail">Vit Mail: </label>
-                <input id="mail" name="VitMail" type="text" />
+                <input
+                    id="mail"
+                    name="VitMail"
+                    type="text"
+                    placeholder="Vit Mail"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="rank"> Rank : </label>
-                <input id="rank" name="rank" type="text" />
+                <input
+                    id="rank"
+                    name="rank"
+                    type="text"
+                    placeholder="rank"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="gameId"> Riot Id : </label>
-                <input id="gameId" name="gameId" type="text" />
+                <input
+                    id="gameId"
+                    name="gameId"
+                    type="text"
+                    placeholder="Riot ID"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="discord"> Discord ID : </label>
-                <input id="discord" name="discord" type="text" />
+                <input
+                    id="discord"
+                    name="discord"
+                    type="text"
+                    placeholder="Discord ID"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="teamName"> Team Name : </label>
-                <input id="teamName" name="teamName" type="text" />
-                <a href="ValorantCreateTeam">
-                    <input type="button" value="Create Team" />
-                </a>
+                <input
+                    id="phno"
+                    name="phoneNumber"
+                    type="number"
+                    placeholder="Phonenumber"
+                    required
+                />
             </div>
             <div class="formField">
-                <label for="phno"> Phone number : </label>
-                <input id="phno" name="phoneNumber" type="number" />
+                <input
+                    id="teamName"
+                    name="teamName"
+                    type="text"
+                    placeholder="Team Name"
+                    required
+                />
             </div>
+            <a href="ValorantCreateTeam">
+                <input type="button" value="Create Team" />
+            </a>
             <button name="submit" type="submit" form="form">Submit</button>
         </form>
     </body>
