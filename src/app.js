@@ -15,6 +15,11 @@ app.use(cors());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../public"));
 app.use("/css", express.static(path.join(__dirname, "../public/css")));
+app.use("/js", express.static(path.join(__dirname, "../public/js")));
+app.use(
+    "/resources",
+    express.static(path.join(__dirname, "../public/resources"))
+);
 
 const uri =
     "mongodb+srv://paradrone:01000101@eventtag.wfz91.mongodb.net/Tournament?retryWrites=true&w=majority";
@@ -139,6 +144,10 @@ app.get("/schedule", (req, res) => {
 
 app.get("/teamInfo", (req, res) => {
     res.render("TeamInfo");
+});
+
+app.get("/mainPage", (req, res) => {
+    res.render("mainPage");
 });
 
 app.get("/createPlayerValorant", (req, res) => {

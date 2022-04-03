@@ -2,39 +2,28 @@
 <html lang="en">
     <head>
         <title>Form</title>
-        <link rel="stylesheet" href="css/form.css" />
+        <link rel="stylesheet" href="css/index.css" />
     </head>
-    <body>
-        <form action="/createPlayer" method="post">
-            <div class="formField">
-                <a href="ValorantCreateTeam">
-                    <input type="button" value="Create Valorant Team" />
-                </a>
+    <body id="body">
+        <div id="main">
+            <div class="container" id="csgoContainer">
+                <img class="logo" src="resources/csgoLogo.png" />
             </div>
-            <div class="formField">
-                <a href="createPlayerValorant">
-                    <input type="button" value="Join a Valorant Team" />
-                </a>
+            <div class="container" id="valorantContainer">
+                <img class="logo" src="resources/valorantImage.svg" />
             </div>
-            <div class="formField">
-                <a href="teamInfo">
-                    <input type="button" value="Get Valorant Team Info" />
-                </a>
+        </div>
+        <div id="formContainer">
+            <div id="csgoFormContainer"></div>
+            <div id="valorantFormContainer">
+                <button id="teamValo">Play Solo</button>
             </div>
-            <div class="formField">
-                <a href="schedule">
-                    <input type="button" value="Check the schedule" />
-                </a>
-            </div>
-            <div class="formField">
-                <a href="scheduleUploadValorant">
-                    <input type="button" value="Add the schedule valorant" />
-                </a>
-            </div>
-            <p>
-                add schedule will only be available to admins to add matches
-                easily
-            </p>
-        </form>
+        </div>
+        <div id="background">
+            <div id="valorantbackgroundContainer"></div>
+            <div id="csgobackgroundContainer"></div>
+        </div>
+        <div id="backgroundGradient"></div>
+        <script src="js/index.js"></script>
     </body>
 </html>
