@@ -103,7 +103,10 @@
             <div class="buttons">
                 <button id="joinTeam">Join A Team</button>
                 <script>
-                    document.getElementById("joinTeam").onclick = function () {
+                    document.getElementById("joinTeam").onclick = function (
+                        event
+                    ) {
+                        event.preventDefault();
                         window.location.href = "/createPlayerValorant";
                     };
                 </script>
