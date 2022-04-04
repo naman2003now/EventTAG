@@ -8,6 +8,7 @@
         <img src="resources/Frame 52.svg" class="frame" />
         <form action="/createPlayerCSGO" method="post" id="form">
             <div class="form">
+                <h1>Join CSGO Team</h1>
                 <div class="formField">
                     <input
                         id="fullName"
@@ -81,6 +82,13 @@
                 </div>
 
                 <div class="buttons">
+                    <button id="joinTeam">Create Team</button>
+                    <script>
+                        document.getElementById("joinTeam").onclick =
+                            function () {
+                                window.location.href = "/CSGOCreateTeam";
+                            };
+                    </script>
                     <button name="submit" type="submit" form="form">
                         Submit
                     </button>
