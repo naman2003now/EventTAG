@@ -99,22 +99,22 @@ app.post("/ValorantCreateTeam", (req, res) => {
     });
 });
 
-app.post("/CSGOSolo", (req, res) => {
+app.post("/ValorantSolo", (req, res) => {
     let playerObject = {
         fullName: req.body.fullName,
         RegistrationNumber: req.body.RegistrationNumber,
         VitMail: req.body.VitMail,
-        CSGORank: req.body.rank,
-        CSGOId: req.body.gameId,
+        ValorantRank: req.body.rank,
+        ValorantId: req.body.gameId,
         discord: req.body.discord,
         phoneNumber: req.body.phoneNumber
             .replaceAll("-", "")
             .replaceAll(" ", ""),
         team: "goingSolo",
     };
-    CSGOPlayer.create(playerObject)
+    ValorantPlayer.create(playerObject)
         .then((player) => {
-            CSGOTeam.findOne({ name: "goingSolo" }).then((team) => {
+            ValorantTeam.findOne({ name: "goingSolo" }).then((team) => {
                 console.log(team);
                 team.players.push(player._id);
                 team.save();
