@@ -1,5 +1,6 @@
 body {
     --show-valo: calc((100vw - 3140 * 100vh / 1024));
+    --main-page: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,7 +122,7 @@ body {
 #backgroundImage {
     position: absolute;
     top: 0;
-    left: -34%;
+    left: var(--main-page);
     aspect-ratio: 3140/1024;
     height: 100vh;
     z-index: 0;
@@ -182,27 +183,28 @@ body {
     width: 100%;
     margin-right: 14%;
     margin-left: -2%;
-    margin-bottom: 25%;
+    margin-bottom: 10%;
 }
 
 .gsLogo {
     position: absolute;
     top: 0;
     left: 75%;
-    transform: translate(-50%, 0);
-    height: 100%;
+    transform: translate(-50%, -12.5%);
+    height: 150%;
 }
 
 .csLogo {
     position: absolute;
     top: 0;
     left: 40%;
-    transform: translate(-50%, 0);
-    height: 100%;
+    transform: translate(-50%, -12.5%);
+    height: 150%;
 }
 
 #soloValo {
-    top: 50%;
+    border-radius: 100px 0px 0px 0px;
+    top: 25%;
     transform: translate(0, -50%);
     margin: 0;
     position: absolute;
@@ -210,7 +212,26 @@ body {
 }
 
 #teamValo {
-    top: 50%;
+    border-radius: 0px 100px 0px 0px;
+    top: 25%;
+    transform: translate(0, -50%);
+    margin: 0;
+    position: absolute;
+    left: 78%;
+}
+#infoValo {
+    border-radius: 0px 0px 0px 100px;
+    top: 75%;
+    transform: translate(0, -50%);
+    margin: 0;
+    position: absolute;
+    right: 28%;
+}
+
+#homeValo {
+    border-radius: 0px 0px 100px 0px;
+
+    top: 75%;
     transform: translate(0, -50%);
     margin: 0;
     position: absolute;
@@ -218,7 +239,9 @@ body {
 }
 
 #soloCSGO {
-    top: 50%;
+    border-radius: 100px 0px 0px 0px;
+
+    top: 25%;
     transform: translate(0, -50%);
     margin: 0;
     position: absolute;
@@ -226,7 +249,28 @@ body {
 }
 
 #teamCSGO {
-    top: 50%;
+    border-radius: 0px 100px 0px 0px;
+
+    top: 25%;
+    transform: translate(0, -50%);
+    margin: 0;
+    position: absolute;
+    left: 43%;
+}
+#infoCSGO {
+    border-radius: 0px 0px 0px 100px;
+
+    top: 75%;
+    transform: translate(0, -50%);
+    margin: 0;
+    position: absolute;
+    right: 63%;
+}
+
+#homeCSGO {
+    border-radius: 0px 0px 100px 0px;
+
+    top: 75%;
     transform: translate(0, -50%);
     margin: 0;
     position: absolute;
@@ -279,7 +323,7 @@ body {
 @keyframes gocesgo {
     to {
         top: 5%;
-        left: 23%;
+        left: 20%;
     }
 }
 
