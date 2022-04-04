@@ -82,24 +82,24 @@ div {
 }
 
 #name-box {
-    width: 350px;
+    width: 90%;
 }
 #name-query-box {
-    width: 400px;
+    width: 90%;
 }
 
 #r-box {
-    width: 150px;
+    width: 90%;
 }
 #r-query-box {
-    width: 300px;
+    width: 90%;
 }
 #id-query-box {
-    width: 300px;
+    width: 90%;
     margin-left: 10px;
 }
 #id-box {
-    width: 200px;
+    width: 90%;
 }
 .query-heading {
     font-size: x-large;

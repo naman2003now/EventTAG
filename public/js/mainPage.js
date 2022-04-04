@@ -62,7 +62,7 @@ document.getElementById("teamValo").onclick = (event) => {
     window.location.href = "/ValorantCreateTeam";
 };
 document.getElementById("infoCSGO").onclick = (event) => {
-    window.location.href = "/teamInfoValorant";
+    window.location.href = "/teamInfoCSGO";
 };
 document.getElementById("homeCSGO").onclick = (event) => {
     window.location.reload();
