@@ -289,7 +289,7 @@ app.get("/ValorantCreateTeam", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("mainPage");
 });
 
 app.get("/scheduleUploadValorant", (req, res) => {

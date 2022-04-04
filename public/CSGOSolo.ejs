@@ -2,10 +2,12 @@
 <html lang="en">
     <head>
         <title>Form</title>
-        <link rel="stylesheet" href="css/form.css" />
+        <link rel="stylesheet" href="css/teamForm.css" />
     </head>
     <body>
+        <img src="resources/frame.png" alt="frame" class="frame">
         <form action="/CSGOSolo" method="post" id="form">
+            <div class="form">
             <div class="formField">
                 <input
                     id="fullName"
@@ -34,7 +36,7 @@
                 />
             </div>
             <div class="formField">
-                <input id="rank" name="rank" type="text" placeholder="rank" />
+                <input id="rank" name="rank" type="text" placeholder="Rank" />
             </div>
             <div class="formField">
                 <input
@@ -58,12 +60,15 @@
                 <input
                     id="phno"
                     name="phoneNumber"
-                    type="number"
-                    placeholder="Phonenumber"
+                    type="tel"
+                    placeholder="Phone Number"
                     required
                 />
             </div>
+            <div class="buttons">
             <button name="submit" type="submit" form="form">Submit</button>
+            </div>
+        </div>
         </form>
     </body>
 </html>

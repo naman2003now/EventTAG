@@ -2,9 +2,10 @@
 <html lang="en">
     <head>
         <title>Form</title>
-        <link rel="stylesheet" href="css/Csgoform.css" />
+        <link rel="stylesheet" href="css/valo.css"/>
     </head>
     <body>
+
         <form action="/createPlayerValorant" method="post" id="form">
             <div class="formField">
                 <input
@@ -38,7 +39,7 @@
                     id="rank"
                     name="rank"
                     type="text"
-                    placeholder="rank"
+                    placeholder="Rank"
                     required
                 />
             </div>
@@ -64,8 +65,8 @@
                 <input
                     id="phno"
                     name="phoneNumber"
-                    type="number"
-                    placeholder="Phonenumber"
+                    type="tel"
+                    placeholder="Phone Number"
                     required
                 />
             </div>
@@ -78,10 +79,13 @@
                     required
                 />
             </div>
+            <div class="buttons">
             <a href="ValorantCreateTeam">
                 <input type="button" value="Create Team" />
             </a>
             <button name="submit" type="submit" form="form">Submit</button>
+            </div>  
+        </div>
         </form>
     </body>
 </html>

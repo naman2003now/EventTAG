@@ -1,23 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+    <div id="logoContainer">
+        <div id="logoBackground"></div>
+    </div>
     <head>
         <title>Game Escape</title>
         <link rel="stylesheet" href="css/mainPage.css" />
     </head>
     <body>
-        <img src="resources/panoramaImage.png" id="backgroundImage" />
+        <img src="resources/Frame 69.png" id="backgroundImage" />
+        <div id="clubLogo">
+            <div id="clubLogoBackground"></div>
+            <img src="resources/TagLogo.png" class="logo tagLogo" />
+            <img src="resources/gameEscapeLogo.svg" class="logo" id="gs" />
+        </div>
         <!-- <div id="introText">
             Escape Reality Embrace Abstract A 48hr intra club
             <strong id="yellow">CS:GO & Valorant</strong> Tournament
         </div> -->
         <div id="ButtonContainer">
             <div class="container" id="csgoButtonContainer">
-                <button id="soloCSGO" class="joinButton">Play Solo</button>
-                <button id="teamCSGO" class="joinButton">Play as Team</button>
+                <img
+                    src="resources/CSGOBackgroundLogo.png"
+                    class="CSGOBackgroundLogo"
+                />
+                <div class="gameEscapeButton">
+                    <button id="soloCSGO" class="joinButton CSGO">
+                        Play Solo
+                    </button>
+                    <button id="teamCSGO" class="joinButton CSGO">
+                        Play as Team
+                    </button>
+                    <img src="resources/csgoButtonLogo.png" class="csLogo" />
+                </div>
             </div>
             <div class="container" id="valorantButtonContainer">
-                <button id="soloValo" class="joinButton">Play Solo</button>
-                <button id="teamValo" class="joinButton">Play as Team</button>
+                <img
+                    src="resources/ValorantBackgroundLogo.png"
+                    class="ValorantBackgroundLogo"
+                />
+                <div class="gameEscapeButton">
+                    <button id="soloValo" class="joinButton valorant">
+                        Play Solo
+                    </button>
+                    <button id="teamValo" class="joinButton valorant">
+                        Play as Team
+                    </button>
+                    <img src="resources/ValoButtonLogo.png" class="gsLogo" />
+                </div>
             </div>
         </div>
         <div id="shaders">
