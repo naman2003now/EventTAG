@@ -1,0 +1,143 @@
+body {
+    margin: 0px;
+    overflow: hidden;
+    background-color: #151515;
+}
+
+#main {
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#valorantContainer {
+    justify-content: flex-end;
+    z-index: 0;
+    height: 100%;
+    width: 50%;
+}
+
+#csgoContainer {
+    z-index: 0;
+
+    height: 100%;
+    width: 50%;
+}
+
+#formContainer {
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+}
+
+#valorantFormContainer {
+    display: none;
+    opacity: 0;
+    height: 100%;
+    width: 50%;
+}
+
+#csgoFormContainer {
+    height: 100%;
+    width: 50%;
+}
+
+#background {
+    display: flex;
+    flex-direction: row;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+}
+
+#valorantbackgroundContainer {
+    background-color: #de9b35;
+    height: 100%;
+    width: 50%;
+}
+
+#csgobackgroundContainer {
+    background-color: #fd4556;
+    height: 100%;
+    width: 50%;
+}
+
+#backgroundGradient {
+    position: absolute;
+
+    z-index: -1;
+
+    top: 0vh;
+    right: 0vw;
+
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(90deg, #de9b35 50%, #fd4556 50%);
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    width: 50%;
+}
+
+@keyframes activateValo {
+    to {
+        transform: translatex(-50vw);
+    }
+}
+@keyframes activateCSGO {
+    to {
+        transform: translatex(50vw);
+    }
+}
+
+@keyframes hoverValo {
+    to {
+        transform: translatex(-5vw);
+    }
+}
+@keyframes hoverCSGO {
+    to {
+        transform: translatex(5vw);
+    }
+}
+@keyframes showForm {
+    to {
+        opacity: 1;
+    }
+}

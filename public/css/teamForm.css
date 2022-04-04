@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+.form {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    width: 100vw;
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.form h1 {
+    color: #edb72c;
+    margin-left: 12%;
+    margin-bottom: 0.2%;
+    font-family: monospace;
+    font-weight: 200;
+}
+
+.form .formField {
+    margin-top: 1%;
+    margin-left: 12%;
+}
+
+.form .formField input {
+    width: 22vw;
+    height: 6vh;
+    border: solid 3px #edb72c;
+    border-radius: 4px;
+    background: none;
+    color: #edb72c;
+    padding: 0 1% 0 1%;
+    font-size: 18px;
+    font-family: monospace;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.form .formField input:focus {
+    outline: solid 3.5px #edb72c;
+    border-radius: 0;
+}
+
+.form .buttons {
+    margin-top: 1%;
+    margin-left: 12%;
+}
+
+.form .buttons a {
+    margin-left: 0;
+}
+
+.form .buttons a input {
+    background-color: #edb72c;
+    border-radius: 3px;
+    border: solid 2px #edb72c;
+    padding: 10px 18px 10px 18px;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 700;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    margin-right: 4%;
+}
+
+.form .buttons a input:hover {
+    background: none;
+    border: solid 2px #edb72c;
+    color: #edb72c;
+    cursor: pointer;
+}
+
+.form .buttons button {
+    background-color: #edb72c;
+    border-radius: 3px;
+    border: solid 2px;
+    border-color: #edb72c;
+    padding: 10px 22px 10px 22px;
+    font-size: 18px;
+    font-family: monospace;
+    font-weight: 700;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.form .buttons button:hover {
+    background: none;
+    border: solid 2px #edb72c;
+    color: #edb72c;
+    cursor: pointer;
+}
+/*# sourceMappingURL=teamForm.css.map */

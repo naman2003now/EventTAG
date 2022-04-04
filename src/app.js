@@ -15,6 +15,11 @@ app.use(cors());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "../public"));
 app.use("/css", express.static(path.join(__dirname, "../public/css")));
+app.use("/js", express.static(path.join(__dirname, "../public/js")));
+app.use(
+    "/resources",
+    express.static(path.join(__dirname, "../public/resources"))
+);
 
 const uri =
     "mongodb+srv://paradrone:01000101@eventtag.wfz91.mongodb.net/Tournament?retryWrites=true&w=majority";
@@ -90,6 +95,123 @@ app.post("/ValorantCreateTeam", (req, res) => {
     });
 });
 
+app.post("/CSGOSolo", (req, res) => {
+    let playerObject = {
+        fullName: req.body.fullName,
+        RegistrationNumber: req.body.RegistrationNumber,
+        VitMail: req.body.VitMail,
+        CSGORank: req.body.rank,
+        CSGOId: req.body.gameId,
+        discord: req.body.discord,
+        phoneNumber: req.body.phoneNumber
+            .replaceAll("-", "")
+            .replaceAll(" ", ""),
+        team: "goingSolo",
+    };
+    CSGOPlayer.create(playerObject)
+        .then((player) => {
+            CSGOTeam.findOne({ name: "goingSolo" }).then((team) => {
+                console.log(team);
+                team.players.push(player._id);
+                team.save();
+                res.send("Player created");
+            });
+        })
+        .catch((error) => res.send(error.message));
+});
+
+app.post("/createPlayerCSGO", (req, res) => {
+    let playerObject = {
+        fullName: req.body.fullName,
+        RegistrationNumber: req.body.RegistrationNumber,
+        VitMail: req.body.VitMail,
+        CSGORank: req.body.rank,
+        CSGOId: req.body.gameId,
+        discord: req.body.discord,
+        phoneNumber: req.body.phoneNumber
+            .replaceAll("-", "")
+            .replaceAll(" ", ""),
+        team: req.body.teamName,
+    };
+
+    CSGOTeam.exists({ name: req.body.teamName }, (err, exists) => {
+        if (exists) {
+            CSGOPlayer.create(playerObject)
+                .then((player) => {
+                    CSGOTeam.findOne({ name: req.body.teamName }).then(
+                        (team) => {
+                            team.players.push(player._id);
+                            team.save();
+                            res.send("Player created");
+                        }
+                    );
+                })
+                .catch((error) => res.send(error.message));
+        } else {
+            res.send("There is not team with that name");
+        }
+    });
+});
+
+app.post("/CSGOCreateTeam", (req, res) => {
+    let playerObject = {
+        fullName: req.body.fullName,
+        RegistrationNumber: req.body.RegistrationNumber,
+        VitMail: req.body.VitMail,
+        CSGORank: req.body.rank,
+        CSGOId: req.body.gameId,
+        discord: req.body.discord,
+        phoneNumber: req.body.phoneNumber
+            .replaceAll("-", "")
+            .replaceAll(" ", ""),
+        team: req.body.teamName,
+    };
+
+    CSGOTeam.exists({ name: req.body.teamName }, (err, exists) => {
+        if (!exists) {
+            CSGOPlayer.create(playerObject)
+                .then((player) => {
+                    let teamObject = {
+                        name: req.body.teamName,
+                        Leader: player._id,
+                        players: [player._id],
+                    };
+                    CSGOTeam.create(teamObject)
+                        .then(() => res.send("Team created"))
+                        .catch((error) => res.send(error.message));
+                })
+                .catch((error) => res.send(error));
+        } else {
+            res.send("Team already exists");
+        }
+    });
+});
+
+app.post("/CSGOSolo", (req, res) => {
+    let playerObject = {
+        fullName: req.body.fullName,
+        RegistrationNumber: req.body.RegistrationNumber,
+        VitMail: req.body.VitMail,
+        CSGORank: req.body.rank,
+        CSGOId: req.body.gameId,
+        discord: req.body.discord,
+        phoneNumber: req.body.phoneNumber
+            .replaceAll("-", "")
+            .replaceAll(" ", ""),
+        team: "goingSolo",
+    };
+
+    CSGOPlayer.create(playerObject)
+        .then((player) => {
+            CSGOTeam.findOne({ name: "goingSolo" }).then((team) => {
+                team.players.push(player._id);
+                team.save();
+                res.send("Player created");
+            });
+        })
+        .catch((error) => res.send(error.message));
+});
+
 app.post("/teamInfo", (req, res) => {
     ValorantTeam.findOne({ name: req.body.teamName }).then((team) => {
         if (team) {
@@ -141,6 +263,23 @@ app.get("/teamInfo", (req, res) => {
     res.render("TeamInfo");
 });
 
+app.get("/mainPage", (req, res) => {
+    res.render("mainPage");
+});
+
+app.get("/CSGOSolo", (req, res) => {
+    res.render("CSGOSolo");
+});
+app.get("/createPlayerCSGO", (req, res) => {
+    res.render("CSGOForm");
+});
+
+app.get("/CSGOCreateTeam", (req, res) => {
+    res.render("CSGOCreateTeam");
+});
+app.get("/ValorantSolo", (req, res) => {
+    res.render("ValorantSolo");
+});
 app.get("/createPlayerValorant", (req, res) => {
     res.render("ValorantForm");
 });
@@ -150,7 +289,7 @@ app.get("/ValorantCreateTeam", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-    res.render("index");
+    res.render("mainPage");
 });
 
 app.get("/scheduleUploadValorant", (req, res) => {
