@@ -1,0 +1,149 @@
+body
+{
+	background-color: #03011B;
+}
+
+div
+{
+	margin: 20px;
+
+}
+
+.heading
+{
+	color: #bd3944;
+	font-family: 'Outfit', sans-serif;
+	font-size: 80px;
+
+}
+.logo
+{
+	background-color:#bd3944 ;
+	height: 70px;
+	width: 200px;
+	/*display: flex;
+	justify-content: center;*/
+/*	justify-self: center;*/
+	border-radius: 40px;
+	/*margin-left: 80%;*/
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	/*border: 2px solid white;*/
+	display: flex;
+	flex-direction: row;
+}
+
+
+
+
+#logo-img
+{	
+	margin: 10px;
+	margin-top: 25px;
+	margin-left: 20px;
+	/*border: 5px solid pink;*/
+	margin-bottom: 15px;
+}
+#event-img
+{	
+	margin-top: 8px;
+	margin-left: -5px;
+/*	border: 2px solid blueviolet;*/
+}	
+.team-name
+{
+	color: #bd3944;
+}
+
+.entry
+{
+	color: #bd3944;
+/*	border:  2px solid blue;*/
+	font-family: 'Outfit', sans-serif;
+	display: flex;
+	flex-direction: row;
+	padding: 0px;
+	margin-bottom: -70px;
+/*	margin-bottom: 0px;*/
+/*	padding: 0px;*/
+}
+.query-box
+{	
+	display: flex;
+/*	border: 2px solid wheat;*/
+	width: 200px;
+	flex-direction: column;
+
+}
+
+.box
+{
+	border: 2px solid #bd3944;
+	border-radius: 10px;
+	width: 100px;
+	height: 30px;
+	justify-content: center;
+	padding: 10px;
+	text-align: left;
+	color: #bd3944;
+	font-size: x-large;
+	margin-top: 0px;
+	font-weight: bold;
+
+}
+.query-heading
+{
+/*	border: 2px solid hotpink;*/
+	justify-content: center;
+	text-align: left;
+}
+
+#name-box
+{
+	width: 350px;
+
+}
+#name-query-box
+{
+	width: 400px;
+}
+
+#r-box
+{
+	width: 150px;
+}
+#r-query-box
+{
+	width: 300px;
+}
+#id-query-box
+{
+	width: 300px;
+	margin-left: 10px;
+}
+#id-box
+{
+	width: 200px;
+}
+.query-heading
+{
+	font-size: x-large;
+	color: white;
+	margin-bottom: 5px;
+	font-weight: bold;
+	padding: 10px;
+}
+.team-name
+{
+	font-family: 'Outfit', sans-serif;
+	font-size: 80px;
+
+}
+
+.eligibility
+{
+	color:  #33cc33;
+	font-size: x-large;
+	font-family: "Outfit", sans-serif;
+}

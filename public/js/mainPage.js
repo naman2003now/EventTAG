@@ -1,17 +1,17 @@
 var backgroundImage = document.getElementById("backgroundImage");
 var body = document.getElementById("body");
 var clicked = false;
-
-if (window.innerWidth < window.innerHeight) {
-    document.getElementById("portrait").style.display = "auto";
-} else {
-    document.getElementById("portrait").style.display = "none";
-}
-
-document.body.style.setProperty(
-    "--main-page",
-    -(backgroundImage.clientWidth - window.innerWidth * 0.95) / 2 + "px"
-);
+setInterval(() => {
+    if (window.innerWidth < window.innerHeight) {
+        document.getElementById("portrait").style.display = "auto";
+    } else {
+        document.getElementById("portrait").style.display = "none";
+    }
+    document.body.style.setProperty(
+        "--main-page",
+        -(backgroundImage.clientWidth - window.innerWidth * 0.95) / 2 + "px"
+    );
+}, 100);
 var valorantShow = (event) => {
     backgroundImage.style.animation = "activateValorant 0.25s forwards";
     document.getElementById("shaders").style.display = "none";

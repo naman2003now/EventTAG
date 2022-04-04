@@ -8,6 +8,8 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+
+    font-family: "Outfit", sans-serif;
 }
 
 #logo {
@@ -105,7 +107,7 @@ body {
     font-size: 2em;
     position: absolute;
 
-    font-family: "Outfit";
+    font-family: "Outfit", sans-serif;
     font-style: normal;
 
     text-align: center;
@@ -203,6 +205,7 @@ body {
 }
 
 #soloValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 100px 0px 0px 0px;
     top: 25%;
     transform: translate(0, -50%);
@@ -212,6 +215,7 @@ body {
 }
 
 #teamValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 100px 0px 0px;
     top: 25%;
     transform: translate(0, -50%);
@@ -220,6 +224,7 @@ body {
     left: 78%;
 }
 #infoValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 0px 100px;
     top: 75%;
     transform: translate(0, -50%);
@@ -229,6 +234,7 @@ body {
 }
 
 #homeValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 100px 0px;
 
     top: 75%;
@@ -239,6 +245,7 @@ body {
 }
 
 #soloCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 100px 0px 0px 0px;
 
     top: 25%;
@@ -249,6 +256,7 @@ body {
 }
 
 #teamCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 100px 0px 0px;
 
     top: 25%;
@@ -258,6 +266,7 @@ body {
     left: 43%;
 }
 #infoCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 0px 100px;
 
     top: 75%;
@@ -268,6 +277,7 @@ body {
 }
 
 #homeCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 100px 0px;
 
     top: 75%;
@@ -352,7 +362,7 @@ body {
 
 #portrait {
     background-color: #ffffff;
-    display: auto;
+    display: none;
     width: 100vw;
     height: 100vh;
     font-size: 50px;
