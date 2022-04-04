@@ -61,11 +61,15 @@ document.getElementById("soloValo").onclick = (event) => {
 document.getElementById("teamValo").onclick = (event) => {
     window.location.href = "/ValorantCreateTeam";
 };
-document.getElementById("infoCSGO").onclick = (event) => {};
+document.getElementById("infoCSGO").onclick = (event) => {
+    window.location.href = "/teamInfoValorant";
+};
 document.getElementById("homeCSGO").onclick = (event) => {
     window.location.reload();
 };
-document.getElementById("infoValo").onclick = (event) => {};
+document.getElementById("infoValo").onclick = (event) => {
+    window.location.href = "/teamInfoValorant";
+};
 document.getElementById("homeValo").onclick = (event) => {
     window.location.reload();
 };
