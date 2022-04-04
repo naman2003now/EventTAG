@@ -5,6 +5,25 @@
         <link rel="stylesheet" href="css/valo.css" />
     </head>
     <body>
+        <video
+            class="frame"
+            autoplay
+            muted
+            loop
+            style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                height: 100%;
+            "
+        >
+            <source src="resources/CSGOFormVideo.ogg" type="video/ogg" />
+        </video>
+        <img
+            src="resources/valoAshiqui.svg"
+            style="position: absolute; bottom: 0; left: 10%; height: 50%"
+        />
         <form action="/ValorantCreateTeam" method="post" id="form">
             <div class="formField">
                 <input
@@ -80,8 +99,14 @@
                 />
             </div>
             <div class="buttons">
-            <button name="submit" type="submit" form="form">Submit</button>
-        </div>
+                <button id="joinTeam">Join Team</button>
+                <script>
+                    document.getElementById("joinTeam").onclick = function () {
+                        window.location.href = "/createPlayerValorant";
+                    };
+                </script>
+                <button name="submit" type="submit" form="form">Submit</button>
+            </div>
         </form>
     </body>
 </html>

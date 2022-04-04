@@ -59,6 +59,8 @@ form .formField input:focus {
 }
 
 form .buttons {
+    display: flex;
+    justify-content: space-evenly;
     width: 22vw;
     margin-top: 1%;
     margin-right: 12%;

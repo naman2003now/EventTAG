@@ -5,70 +5,88 @@
         <link rel="stylesheet" href="css/teamForm.css" />
     </head>
     <body>
-        <img src="resources/frame.png" alt="frame" class="frame">
+        <!-- <div>
+            <video class="frame" autoplay muted loop>
+                <source src="resources/CSGOFormVideo.mp4" type="video/mp4" />
+            </video>
+        </div>
+        <script>
+            var video = document.getElementsByTagName("video")[0];
+            video.addEventListener("loadeddata", function () {
+                video.play();
+            });
+        </script> -->
+        <img src="resources/Frame 52.svg" alt="frame" class="frame" />
         <form action="/CSGOSolo" method="post" id="form">
             <div class="form">
-            <div class="formField">
-                <input
-                    id="fullName"
-                    name="fullName"
-                    type="text"
-                    placeholder="Full Name"
-                    required
-                />
+                <div class="formField">
+                    <input
+                        id="fullName"
+                        name="fullName"
+                        type="text"
+                        placeholder="Full Name"
+                        required
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="regno"
+                        name="RegistrationNumber"
+                        type="text"
+                        placeholder="Registration Number"
+                        required
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="mail"
+                        name="VitMail"
+                        type="text"
+                        placeholder="Vit Mail"
+                        required
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="rank"
+                        name="rank"
+                        type="text"
+                        placeholder="Rank"
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="gameId"
+                        name="gameId"
+                        type="text"
+                        placeholder="Steam profile Link"
+                        required
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="discord"
+                        name="discord"
+                        type="text"
+                        placeholder="Discord ID"
+                        required
+                    />
+                </div>
+                <div class="formField">
+                    <input
+                        id="phno"
+                        name="phoneNumber"
+                        type="tel"
+                        placeholder="Phone Number"
+                        required
+                    />
+                </div>
+                <div class="buttons">
+                    <button name="submit" type="submit" form="form">
+                        Submit
+                    </button>
+                </div>
             </div>
-            <div class="formField">
-                <input
-                    id="regno"
-                    name="RegistrationNumber"
-                    type="text"
-                    placeholder="Registration Number"
-                    required
-                />
-            </div>
-            <div class="formField">
-                <input
-                    id="mail"
-                    name="VitMail"
-                    type="text"
-                    placeholder="Vit Mail"
-                    required
-                />
-            </div>
-            <div class="formField">
-                <input id="rank" name="rank" type="text" placeholder="Rank" />
-            </div>
-            <div class="formField">
-                <input
-                    id="gameId"
-                    name="gameId"
-                    type="text"
-                    placeholder="Riot ID"
-                    required
-                />
-            </div>
-            <div class="formField">
-                <input
-                    id="discord"
-                    name="discord"
-                    type="text"
-                    placeholder="Steam ID"
-                    required
-                />
-            </div>
-            <div class="formField">
-                <input
-                    id="phno"
-                    name="phoneNumber"
-                    type="tel"
-                    placeholder="Phone Number"
-                    required
-                />
-            </div>
-            <div class="buttons">
-            <button name="submit" type="submit" form="form">Submit</button>
-            </div>
-        </div>
         </form>
     </body>
 </html>

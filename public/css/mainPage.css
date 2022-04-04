@@ -349,3 +349,12 @@ body {
     margin-right: 20%;
     margin-bottom: -7%;
 }
+
+#portrait {
+    background-color: #ffffff;
+    display: auto;
+    width: 100vw;
+    height: 100vh;
+    font-size: 50px;
+    z-index: 100000;
+}

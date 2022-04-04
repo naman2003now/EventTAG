@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/teamForm.css" />
     </head>
     <body>
-        <img src="resources/frame.png" alt="frame" class="frame">
+        <img src="resources/Frame 52.svg" alt="frame" class="frame">
         <form action="/CSGOCreateTeam" method="post" id="form">
             <div class="form">
             <div class="formField">
@@ -81,9 +81,19 @@
                     required
                 />
             </div>
-            <div class="buttons">
-            <button name="submit" type="submit" form="form">Submit</button>
-            </div>
+                <div class="buttons">
+                    <button id="joinTeam">
+                        Join Team
+                    </button>
+                                 <script>
+                    document.getElementById("joinTeam").onclick = function () {
+                        window.location.href = "/createPlayerCSGO";
+                    };
+                </script>
+                    <button name="submit" type="submit" form="form">
+                        Submit
+                    </button>
+                </div>
         </div>
         </div>
         </form>
