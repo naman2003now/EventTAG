@@ -39,13 +39,13 @@ document.getElementById("soloCSGO").onclick = (event) => {
     window.location.href = "/CSGOSolo";
 };
 document.getElementById("teamCSGO").onclick = (event) => {
-    window.location.href = "/CSGOForm";
+    window.location.href = "/createPlayerCSGO";
 };
 document.getElementById("soloValo").onclick = (event) => {
     window.location.href = "/ValorantSolo";
 };
 document.getElementById("teamValo").onclick = (event) => {
-    window.location.href = "/ValorantForm";
+    window.location.href = "/createPlayerValorant";
 };
 
 setInterval(() => window.scrollTo(0, 0), 0);
