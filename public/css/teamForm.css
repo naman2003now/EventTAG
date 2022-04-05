@@ -1,14 +1,19 @@
 body {
     margin: 0;
+    height: 100vh;
+    width: 100vw;
     overflow: hidden;
+    background-color: #131313;
+}
+
+video {
 }
 
 .frame {
     position: absolute;
-    top: 0;
+    top: -10%;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
     z-index: -1;
 }
 
@@ -62,6 +67,9 @@ body {
 }
 
 .form .buttons {
+    width: 22vw;
+    display: flex;
+    justify-content: space-evenly;
     margin-top: 1%;
     margin-left: 12%;
 }

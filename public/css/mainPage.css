@@ -1,5 +1,5 @@
 body {
-    --show-valo: calc((100vw - 3140 * 100vh / 1024));
+    --show-valo: calc((80vw - 3140 * 100vh / 1024));
     --main-page: 0;
     display: flex;
     justify-content: center;
@@ -8,6 +8,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+
+    background-color: #03011bfa;
+
+    font-family: "Outfit", sans-serif;
 }
 
 #logo {
@@ -105,7 +109,7 @@ body {
     font-size: 2em;
     position: absolute;
 
-    font-family: "Outfit";
+    font-family: "Outfit", sans-serif;
     font-style: normal;
 
     text-align: center;
@@ -203,6 +207,7 @@ body {
 }
 
 #soloValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 100px 0px 0px 0px;
     top: 25%;
     transform: translate(0, -50%);
@@ -212,6 +217,7 @@ body {
 }
 
 #teamValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 100px 0px 0px;
     top: 25%;
     transform: translate(0, -50%);
@@ -220,6 +226,7 @@ body {
     left: 78%;
 }
 #infoValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 0px 100px;
     top: 75%;
     transform: translate(0, -50%);
@@ -229,6 +236,7 @@ body {
 }
 
 #homeValo {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 100px 0px;
 
     top: 75%;
@@ -239,6 +247,7 @@ body {
 }
 
 #soloCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 100px 0px 0px 0px;
 
     top: 25%;
@@ -249,6 +258,7 @@ body {
 }
 
 #teamCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 100px 0px 0px;
 
     top: 25%;
@@ -258,6 +268,7 @@ body {
     left: 43%;
 }
 #infoCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 0px 100px;
 
     top: 75%;
@@ -268,6 +279,7 @@ body {
 }
 
 #homeCSGO {
+    font-family: "Outfit", sans-serif;
     border-radius: 0px 0px 100px 0px;
 
     top: 75%;
@@ -348,4 +360,13 @@ body {
     width: 80%;
     margin-right: 20%;
     margin-bottom: -7%;
+}
+
+#portrait {
+    background-color: #ffffff;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    font-size: 50px;
+    z-index: 100000;
 }

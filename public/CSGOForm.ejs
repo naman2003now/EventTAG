@@ -5,9 +5,29 @@
         <link rel="stylesheet" href="css/teamForm.css" />
     </head>
     <body>
-        <img src="resources/frame.png" alt="frame" class="frame" />
+        <video
+            class="frame"
+            autoplay
+            muted
+            loop
+            src="                
+                position: absolute;
+                margin: 0;
+                left: 0;
+                top: 0;
+                z-index: -1;
+                height: 100%;
+                "
+        >
+            <source src="resources/CSGO Animation.mp4" type="video/mp4" />
+        </video>
+        <script>
+            setInterval(() => window.scrollTo(0, 0), 0);
+        </script>
+        <!-- <img src="resources/Frame 52.svg" class="frame" /> -->
         <form action="/createPlayerCSGO" method="post" id="form">
             <div class="form">
+                <h1>Join CSGO Team</h1>
                 <div class="formField">
                     <input
                         id="fullName"
@@ -48,7 +68,7 @@
                         id="gameId"
                         name="gameId"
                         type="text"
-                        placeholder="Steam ID"
+                        placeholder="Steam profile link"
                         required
                     />
                 </div>
@@ -81,9 +101,13 @@
                 </div>
 
                 <div class="buttons">
-                    <a href="CSGOCreateTeam">
-                        <input type="button" value="Create Team" />
-                    </a>
+                    <button id="joinTeam">Create Team</button>
+                    <script>
+                        document.getElementById("joinTeam").onclick =
+                            function () {
+                                window.location.href = "/CSGOCreateTeam";
+                            };
+                    </script>
                     <button name="submit" type="submit" form="form">
                         Submit
                     </button>

@@ -1,10 +1,18 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url("/resources/valoFrame.svg");
+    background-color: #03011b;
     background-position: center;
     background-repeat: none;
     background-size: cover;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
 }
 
 form {
@@ -52,6 +60,9 @@ form .formField input {
     -webkit-transition: 0.3s;
     transition: 0.3s;
 }
+form .formField input {
+    font-family: "Outfit", sans-serif;
+}
 
 form .formField input:focus {
     outline: solid 3.5px #a92230;
@@ -59,6 +70,8 @@ form .formField input:focus {
 }
 
 form .buttons {
+    display: flex;
+    justify-content: space-evenly;
     width: 22vw;
     margin-top: 1%;
     margin-right: 12%;

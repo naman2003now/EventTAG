@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Team Info Results</title>
+        <link rel="stylesheet" href="css/TeamInfoValorantResult.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <div class="heading">
+            <h1>TEAM INFO</h1>
+        </div>
+        <div class="logo">
+            <span class="logo-img">
+                <img
+                    id="logo-img"
+                    height="20px"
+                    width="80px"
+                    src="resources/Taglogo.png"
+                />
+            </span>
+            <span class="event-logo">
+                <img
+                    id="event-img"
+                    height="50px"
+                    width="100px"
+                    src="resources/gameEscapeLogo.svg"
+                />
+            </span>
+        </div>
+
+        <div>
+            <div class="team-name"><%=teamName%></div>
+            <% if(eligible) { %>
+            <div class="eligibility">
+                You're team is eligible to play.
+                <br />
+                All The Best!!!
+            </div>
+            <% } else { %>
+            <div class="eligibility" style="color: red">
+                You're team is not eligible to play.
+                <br />
+                You need 5 players
+            </div>
+
+            <%}%> <% players.forEach(function(player) { %>
+            <div class="entry">
+                <div class="query-box" id="name-query-box">
+                    <div class="box" id="name-box"><%= player.fullName %></div>
+                </div>
+                <div class="query-box" id="r-query-box">
+                    <div class="box" id="r-box">
+                        discord: <%= player.discord %>
+                    </div>
+                </div>
+                <div class="query-box" id="id-query-box">
+                    <div class="box" id="id-box">
+                        Ph No.: <%= player.phoneNumber %>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </body>
+</html>

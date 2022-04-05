@@ -1,11 +1,17 @@
 var backgroundImage = document.getElementById("backgroundImage");
 var body = document.getElementById("body");
 var clicked = false;
-
-document.body.style.setProperty(
-    "--main-page",
-    -(backgroundImage.clientWidth - window.innerWidth * 0.95) / 2 + "px"
-);
+setInterval(() => {
+    if (window.innerWidth < window.innerHeight) {
+        document.getElementById("portrait").style.display = "block";
+    } else {
+        document.getElementById("portrait").style.display = "none";
+    }
+    document.body.style.setProperty(
+        "--main-page",
+        -(backgroundImage.clientWidth - window.innerWidth * 0.95) / 2 + "px"
+    );
+}, 100);
 var valorantShow = (event) => {
     backgroundImage.style.animation = "activateValorant 0.25s forwards";
     document.getElementById("shaders").style.display = "none";
@@ -47,19 +53,23 @@ document.getElementById("soloCSGO").onclick = (event) => {
     window.location.href = "/CSGOSolo";
 };
 document.getElementById("teamCSGO").onclick = (event) => {
-    window.location.href = "/createPlayerCSGO";
+    window.location.href = "/CSGOCreateTeam";
 };
 document.getElementById("soloValo").onclick = (event) => {
     window.location.href = "/ValorantSolo";
 };
 document.getElementById("teamValo").onclick = (event) => {
-    window.location.href = "/createPlayerValorant";
+    window.location.href = "/ValorantCreateTeam";
 };
-document.getElementById("infoCSGO").onclick = (event) => {};
+document.getElementById("infoCSGO").onclick = (event) => {
+    window.location.href = "/teamInfoCSGO";
+};
 document.getElementById("homeCSGO").onclick = (event) => {
     window.location.reload();
 };
-document.getElementById("infoValo").onclick = (event) => {};
+document.getElementById("infoValo").onclick = (event) => {
+    window.location.href = "/teamInfoValorant";
+};
 document.getElementById("homeValo").onclick = (event) => {
     window.location.reload();
 };

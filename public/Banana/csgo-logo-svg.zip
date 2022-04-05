@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> 
+		Team Info
+	</title>
+	<link rel="stylesheet" href="main.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<div class="logo">
+		<span class="logo-img">
+			<img id="logo-img" height="20px" width="80px" src="Taglogo.png">
+		</span>
+		<span class="event-logo">
+			<img id="event-img" height="50px" width="100px" src="gameEscapeLogo.svg">
+		</span>
+	</div>
+
+	<div class="heading">
+		<h1>
+			TEAM INFO
+		</h1>
+	</div>
+	<div class="query">
+		<p>
+			Enter Team's Name:
+		</p>
+	</div>
+	<form class="form-box" action="/teamInfo" method="post" autocomplete="off">
+            <div class="searchField">
+                <label for="teamName"></label>
+                <input id="teamName" name="teamName" type="text">
+                <br>
+                <button>Search</button>
+            </div>
+    </form>
+</body>
+

@@ -42,19 +42,23 @@ app.post("/createPlayerValorant", (req, res) => {
         team: req.body.teamName,
     };
 
-    ValorantTeam.exists({ name: req.body.teamName }, (err, exists) => {
-        if (exists) {
-            ValorantPlayer.create(playerObject)
-                .then((player) => {
-                    ValorantTeam.findOne({ name: req.body.teamName }).then(
-                        (team) => {
-                            team.players.push(player._id);
-                            team.save();
-                            res.send("Player created");
-                        }
-                    );
-                })
-                .catch((error) => res.send(error.message));
+    ValorantTeam.findOne({ name: req.body.teamName }, (err, team) => {
+        if (team) {
+            if (team.players.length < 5) {
+                ValorantPlayer.create(playerObject)
+                    .then((player) => {
+                        ValorantTeam.findOne({ name: req.body.teamName }).then(
+                            (team) => {
+                                team.players.push(player._id);
+                                team.save();
+                                res.send("Player created");
+                            }
+                        );
+                    })
+                    .catch((error) => res.send(error.message));
+            } else {
+                res.send("Team is full");
+            }
         } else {
             res.send("There is not team with that name");
         }
@@ -95,22 +99,22 @@ app.post("/ValorantCreateTeam", (req, res) => {
     });
 });
 
-app.post("/CSGOSolo", (req, res) => {
+app.post("/ValorantSolo", (req, res) => {
     let playerObject = {
         fullName: req.body.fullName,
         RegistrationNumber: req.body.RegistrationNumber,
         VitMail: req.body.VitMail,
-        CSGORank: req.body.rank,
-        CSGOId: req.body.gameId,
+        ValorantRank: req.body.rank,
+        ValorantId: req.body.gameId,
         discord: req.body.discord,
         phoneNumber: req.body.phoneNumber
             .replaceAll("-", "")
             .replaceAll(" ", ""),
         team: "goingSolo",
     };
-    CSGOPlayer.create(playerObject)
+    ValorantPlayer.create(playerObject)
         .then((player) => {
-            CSGOTeam.findOne({ name: "goingSolo" }).then((team) => {
+            ValorantTeam.findOne({ name: "goingSolo" }).then((team) => {
                 console.log(team);
                 team.players.push(player._id);
                 team.save();
@@ -134,19 +138,23 @@ app.post("/createPlayerCSGO", (req, res) => {
         team: req.body.teamName,
     };
 
-    CSGOTeam.exists({ name: req.body.teamName }, (err, exists) => {
-        if (exists) {
-            CSGOPlayer.create(playerObject)
-                .then((player) => {
-                    CSGOTeam.findOne({ name: req.body.teamName }).then(
-                        (team) => {
-                            team.players.push(player._id);
-                            team.save();
-                            res.send("Player created");
-                        }
-                    );
-                })
-                .catch((error) => res.send(error.message));
+    CSGOTeam.findOne({ name: req.body.teamName }, (err, exists) => {
+        if (team) {
+            if (team.players.length < 5) {
+                CSGOPlayer.create(playerObject)
+                    .then((player) => {
+                        CSGOTeam.findOne({ name: req.body.teamName }).then(
+                            (team) => {
+                                team.players.push(player._id);
+                                team.save();
+                                res.send("Player created");
+                            }
+                        );
+                    })
+                    .catch((error) => res.send(error.message));
+            } else {
+                res.send("Team Full");
+            }
         } else {
             res.send("There is not team with that name");
         }
@@ -212,7 +220,26 @@ app.post("/CSGOSolo", (req, res) => {
         .catch((error) => res.send(error.message));
 });
 
-app.post("/teamInfo", (req, res) => {
+app.post("/teamInfoCSGO", (req, res) => {
+    CSGOTeam.findOne({ name: req.body.teamName }).then((team) => {
+        if (team) {
+            CSGOPlayer.find()
+                .where("_id")
+                .in(team.players)
+                .exec()
+                .then((players) => {
+                    res.render("TeamInfoCSGOResult", {
+                        teamName: team.name,
+                        players: players,
+                        eligible: team.players.length == 5,
+                    });
+                });
+        } else {
+            res.send("There is no team with that name");
+        }
+    });
+});
+app.post("/teamInfoValorant", (req, res) => {
     ValorantTeam.findOne({ name: req.body.teamName }).then((team) => {
         if (team) {
             ValorantPlayer.find()
@@ -220,9 +247,10 @@ app.post("/teamInfo", (req, res) => {
                 .in(team.players)
                 .exec()
                 .then((players) => {
-                    res.render("TeamInfoResult", {
+                    res.render("TeamInfoValorantResult", {
                         teamName: team.name,
                         players: players,
+                        eligible: team.players.length == 5,
                     });
                 });
         }
@@ -259,8 +287,11 @@ app.get("/schedule", (req, res) => {
     ValorantLobby.find().then((matches) => res.render("schedule", { matches }));
 });
 
-app.get("/teamInfo", (req, res) => {
-    res.render("TeamInfo");
+app.get("/teamInfoCSGO", (req, res) => {
+    res.render("TeamInfoCSGO");
+});
+app.get("/teamInfoValorant", (req, res) => {
+    res.render("TeamInfoValorant");
 });
 
 app.get("/mainPage", (req, res) => {
