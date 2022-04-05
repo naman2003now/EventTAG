@@ -22,7 +22,7 @@ app.use(
 );
 
 const uri =
-    "mongodb+srv://paradrone:01000101@eventtag.wfz91.mongodb.net/Tournament?retryWrites=true&w=majority";
+    "mongodb+srv://naman2003now:paradrone@eventtag.wfz91.mongodb.net/GameEscape?retryWrites=true&w=majority";
 
 mongoose.connect(uri, () => {
     console.log("Connection Established");
@@ -138,7 +138,7 @@ app.post("/createPlayerCSGO", (req, res) => {
         team: req.body.teamName,
     };
 
-    CSGOTeam.findOne({ name: req.body.teamName }, (err, exists) => {
+    CSGOTeam.findOne({ name: req.body.teamName }, (err, team) => {
         if (team) {
             if (team.players.length < 5) {
                 CSGOPlayer.create(playerObject)
