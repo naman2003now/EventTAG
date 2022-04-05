@@ -24,15 +24,18 @@
             loop
             style="
                 position: absolute;
+                margin: 0;
+                left: 0;
                 top: 0;
-                right: 0;
                 z-index: -1;
-                height: 100%;
                 width: 100%;
             "
         >
             <source src="resources/CSGO Animation.mp4" type="video/mp4" />
         </video>
+        <script>
+            setInterval(() => window.scrollTo(0, 0), 0);
+        </script>
         <form action="/CSGOSolo" method="post" id="form">
             <div class="form">
                 <h1>Play CSGO Solo</h1>

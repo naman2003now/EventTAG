@@ -7,6 +7,14 @@ body {
     background-size: cover;
 }
 
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+}
+
 form {
     margin-top: 2%;
     width: 100vw;
@@ -51,6 +59,9 @@ form .formField input {
     font-family: monospace;
     -webkit-transition: 0.3s;
     transition: 0.3s;
+}
+form .formField input {
+    font-family: "Outfit", sans-serif;
 }
 
 form .formField input:focus {
