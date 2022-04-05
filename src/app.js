@@ -222,7 +222,7 @@ app.post("/CSGOSolo", (req, res) => {
 
 app.post("/teamInfoCSGO", (req, res) => {
     CSGOTeam.findOne({ name: req.body.teamName }).then((team) => {
-        if (team) {
+        if (team.players) {
             CSGOPlayer.find()
                 .where("_id")
                 .in(team.players)
@@ -241,7 +241,7 @@ app.post("/teamInfoCSGO", (req, res) => {
 });
 app.post("/teamInfoValorant", (req, res) => {
     ValorantTeam.findOne({ name: req.body.teamName }).then((team) => {
-        if (team) {
+        if (team.players) {
             ValorantPlayer.find()
                 .where("_id")
                 .in(team.players)
