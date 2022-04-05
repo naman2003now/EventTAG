@@ -1,7 +1,7 @@
 body {
     margin: 0;
     overflow: hidden;
-    background-image: url("/resources/valoFrame.svg");
+    background-color: #03011b;
     background-position: center;
     background-repeat: none;
     background-size: cover;

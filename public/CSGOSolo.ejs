@@ -16,7 +16,23 @@
                 video.play();
             });
         </script> -->
-        <img src="resources/Frame 52.svg" alt="frame" class="frame" />
+        <!-- <img src="resources/Frame 52.svg" alt="frame" class="frame" /> -->
+        <video
+            class="frame"
+            autoplay
+            muted
+            loop
+            style="
+                position: absolute;
+                top: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+            "
+        >
+            <source src="resources/CSGO Animation.mp4" type="video/mp4" />
+        </video>
         <form action="/CSGOSolo" method="post" id="form">
             <div class="form">
                 <h1>Play CSGO Solo</h1>
