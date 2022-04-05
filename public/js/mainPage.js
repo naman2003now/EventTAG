@@ -3,7 +3,7 @@ var body = document.getElementById("body");
 var clicked = false;
 setInterval(() => {
     if (window.innerWidth < window.innerHeight) {
-        document.getElementById("portrait").style.display = "auto";
+        document.getElementById("portrait").style.display = "block";
     } else {
         document.getElementById("portrait").style.display = "none";
     }
