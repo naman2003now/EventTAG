@@ -259,6 +259,7 @@ app.post("/teamInfoValorant", (req, res) => {
             });
         } else {
             res.send("Please check your Team name correctly, there is no team Named with " + req.body.teamName);
+        }
     });
 });
 
