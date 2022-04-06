@@ -242,7 +242,7 @@ app.post("/teamInfoCSGO", (req, res) => {
     });
 });
 app.post("/teamInfoValorant", (req, res) => {
-    ValorantTeam.exists({ name: req.body.teamName }).then((exists) => {
+    ValorantTeam.exists({ name: req.body.teamName }).then((err, exists) => {
         if (exists) {
             ValorantTeam.findOne({name: req.body.teamName}).then((team) => {
                 ValorantPlayer.find()
