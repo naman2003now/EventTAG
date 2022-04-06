@@ -221,44 +221,49 @@ app.post("/CSGOSolo", (req, res) => {
 });
 
 app.post("/teamInfoCSGO", (req, res) => {
-    CSGOTeam.exists({ name: req.body.teamName }).then((err, exists) => {
-        if (exists) {
-            CSGOTeam.findOne({name: req.body.teamName}).then((team) => {
-                CSGOPlayer.find()
-                    .where("_id")
-                    .in(team.players)
-                    .exec()
-                    .then((players) => {
-                        res.render("TeamInfoCSGOResult", {
-                            teamName: team.name,
-                            players: players,
-                            eligible: team.players.length == 5,
-                        });
+    CSGOTeam.findOne({ name: req.body.teamName }).then((team) => {
+        if (team) {
+            console.log("Team found " + req.body.teamName);
+            // CSGOTeam.findOne({ name: req.body.teamName }).then((team) => {
+            CSGOPlayer.find()
+                .where("_id")
+                .in(team.players)
+                .exec()
+                .then((players) => {
+                    res.render("TeamInfoCSGOResult", {
+                        teamName: team.name,
+                        players: players,
+                        eligible: team.players.length == 5,
                     });
-            });
+                });
+            // });
         } else {
             res.send("There is no team with that name");
         }
     });
 });
 app.post("/teamInfoValorant", (req, res) => {
-    ValorantTeam.exists({ name: req.body.teamName }).then((err, exists) => {
-        if (exists) {
-            ValorantTeam.findOne({name: req.body.teamName}).then((team) => {
-                ValorantPlayer.find()
-                    .where("_id")
-                    .in(team.players)
-                    .exec()
-                    .then((players) => {
-                        res.render("TeamInfoValorantResult", {
-                            teamName: team.name,
-                            players: players,
-                            eligible: team.players.length == 5,
-                        });
+    ValorantTeam.findOne({ name: req.body.teamName }).then((team) => {
+        if (team) {
+            console.log("Team found " + req.body.teamName);
+            // ValorantTeam.findOne({name: req.body.teamName}).then((team) => {
+            ValorantPlayer.find()
+                .where("_id")
+                .in(team.players)
+                .exec()
+                .then((players) => {
+                    res.render("TeamInfoValorantResult", {
+                        teamName: team.name,
+                        players: players,
+                        eligible: team.players.length == 5,
                     });
-            });
+                });
+            // });
         } else {
-            res.send("Please check your Team name correctly, there is no team Named with " + req.body.teamName);
+            res.send(
+                "Please check your Team name correctly, there is no team Named with " +
+                    req.body.teamName
+            );
         }
     });
 });
