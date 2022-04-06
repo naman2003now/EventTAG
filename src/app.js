@@ -221,19 +221,21 @@ app.post("/CSGOSolo", (req, res) => {
 });
 
 app.post("/teamInfoCSGO", (req, res) => {
-    CSGOTeam.findOne({ name: req.body.teamName }).then((team) => {
-        if (team.players) {
-            CSGOPlayer.find()
-                .where("_id")
-                .in(team.players)
-                .exec()
-                .then((players) => {
-                    res.render("TeamInfoCSGOResult", {
-                        teamName: team.name,
-                        players: players,
-                        eligible: team.players.length == 5,
+    CSGOTeam.exists({ name: req.body.teamName }).then((err, exists) => {
+        if (exists) {
+            CSGOTeam.findOne({name: req.body.teamName}).then((team) => {
+                CSGOPlayer.find()
+                    .where("_id")
+                    .in(team.players)
+                    .exec()
+                    .then((players) => {
+                        res.render("TeamInfoCSGOResult", {
+                            teamName: team.name,
+                            players: players,
+                            eligible: team.players.length == 5,
+                        });
                     });
-                });
+            });
         } else {
             res.send("There is no team with that name");
         }
