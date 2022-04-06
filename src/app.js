@@ -242,19 +242,21 @@ app.post("/teamInfoCSGO", (req, res) => {
     });
 });
 app.post("/teamInfoValorant", (req, res) => {
-    ValorantTeam.findOne({ name: req.body.teamName }).then((team) => {
-        if (team.players) {
-            ValorantPlayer.find()
-                .where("_id")
-                .in(team.players)
-                .exec()
-                .then((players) => {
-                    res.render("TeamInfoValorantResult", {
-                        teamName: team.name,
-                        players: players,
-                        eligible: team.players.length == 5,
+    ValorantTeam.exists({ name: req.body.teamName }).then((exists) => {
+        if (exists) {
+            ValorantTeam.findOne({name: req.body.teamName}).then((team) => {
+                ValorantPlayer.find()
+                    .where("_id")
+                    .in(team.players)
+                    .exec()
+                    .then((players) => {
+                        res.render("TeamInfoValorantResult", {
+                            teamName: team.name,
+                            players: players,
+                            eligible: team.players.length == 5,
+                        });
                     });
-                });
+            });
         }
     });
 });
